@@ -1,0 +1,21 @@
+alias ll="ls -alF"
+alias fhn="find . -name "
+
+alias git25="git log | head -n 25"
+alias gitlm="git log | more"
+alias gitss="git status ; git log | head -n 3"
+alias gitcm="git checkout master"
+alias gitd="git diff"
+alias gitdc="git diff --cached"
+alias gitme="git log | grep -A4 -B1 Houhou | more"
+alias gitmf="git merge --ff-only"
+
+alias gitco="git co"
+alias gitsv="git sv"
+alias gitli="git li"
+alias gitap="git ap"
+
+#--rvm--
+#If you wish to have the 'pretty colors' again,
+#  set 'export rvm_pretty_print_flag=1' in ~/.rvmrc.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
