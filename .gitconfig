@@ -1,0 +1,27 @@
+[user]
+	name = Chris Houhoulis
+[web]
+	browser = firefox
+[branch]
+	autosetuprebase = always
+[color]
+	ui = always
+	diff = always
+[diff]
+	renames = copies
+[status]
+	showUntrackedFiles = all
+
+[alias]
+        brm = merge --no-ff --log --no-commit
+        co = checkout
+        sv = stash save
+        li = stash list
+        ap = stash apply
+[push]
+        default = tracking
+[gc]
+        reflogExpire = 12 months
+        reflogExpireUnreachable = 12 months
+        rerereunresolved = 60 days
+        pruneExpire = 5 weeks ago
