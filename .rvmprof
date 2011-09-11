@@ -1,0 +1,5 @@
+alias rvminfo="rvm info | tail"
+export rvm_pretty_print_flag=1
+
+# in slack puppy, rvm_path is set in /etc/rvmrc to /usr/local
+[[ -s "$rvm_path/scripts/rvm" ]] && . "$rvm_path/scripts/rvm" # Load RVM function
