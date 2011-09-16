@@ -1,0 +1,5 @@
+Mount development partition in an init script in /etc/init.d.
+Set $HOMEBASE to dev partition in .bashrc.
+Link in .bashrc to make development projects use my shared-environment
+.gitconfig:
+ln -s $HOMEBASE/.gitconfig ~/.gitconfig
