@@ -15,12 +15,12 @@ if exists("syntax_on")
 endif
 let g:colors_name = "oblivi2"
 
-hi Normal ctermfg=159 ctermbg=233
-hi Cursor ctermfg=253
-hi CursorLine ctermbg=248
+hi Normal ctermfg=15 ctermbg=233
+hi Cursor ctermfg=243 ctermbg=237
+hi CursorLine ctermfg=196 ctermbg=248
 hi LineNr ctermfg=238 ctermbg=16
-hi Search ctermbg=74
-hi Visual ctermbg=44
+hi Search ctermbg=52
+hi Visual ctermbg=237
 
 " Folds
 " -----
@@ -46,7 +46,7 @@ hi Directory ctermfg=149
 
 
 "rubyComment
-hi Comment ctermfg=240
+hi Comment ctermfg=239
 hi link Todo Comment
 
 "rubyPseudoVariable
@@ -64,11 +64,13 @@ hi Delimiter ctermfg=65
 hi Error ctermfg=255 ctermbg=124
 
 "rubyFunction
-hi Function ctermfg=74
+hi Function ctermfg=69
 
 "rubyIdentifier
 "@var, @@var, $var, etc
-hi Identifier ctermfg=98
+"hi Identifier ctermfg=98
+"hi link Identifier Constant
+hi Identifier ctermfg=134
 
 "rubyInclude
 "include, autoload, extend, load, require
@@ -99,12 +101,12 @@ hi link Statement Keyword
 "
 
 "rubyString
-hi String ctermfg=246
+hi String ctermfg=245
 
-hi Title ctermfg=250
+hi Title ctermfg=226
 
 "rubyConstant
-hi Type ctermfg=119 cterm=bold
+hi Type ctermfg=113 cterm=bold
 
 "hi rubyBlockParameter ctermfg=15
 "hi rubyClass ctermfg=18
