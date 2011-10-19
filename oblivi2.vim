@@ -19,7 +19,7 @@ hi Normal ctermfg=15 ctermbg=233
 hi Cursor ctermfg=243 ctermbg=237
 hi CursorLine ctermfg=196 ctermbg=248
 hi LineNr ctermfg=238 ctermbg=16
-hi Search ctermbg=52
+hi Search ctermfg=16 ctermbg=249
 hi Visual ctermbg=237
 
 " Folds
