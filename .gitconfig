@@ -1,7 +1,6 @@
 [user]
 	name = Chris Houhoulis
-[web]
-	browser = firefox
+	email = chris@chrishouhoulis.com
 [branch]
 	autosetuprebase = always
 [color]
@@ -25,3 +24,13 @@
         reflogExpireUnreachable = 12 months
         rerereunresolved = 60 days
         pruneExpire = 5 weeks ago
+[core]
+  # excludesfile = /Users/xxxx/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	user = houhoulis
