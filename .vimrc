@@ -22,10 +22,14 @@ if $COLORTERM == 'gnome-terminal'
   set term=gnome-256color
   colorscheme oblivi2
 else
-  set t_Co=256
-  " set term=rxvt-unicode
-  set term=xterm
-  colorscheme oblivi2
+  if $TERM_PROGRAM == 'Apple_Terminal'
+    colorscheme oblivi2
+  else
+    set t_Co=256
+    " set term=rxvt-unicode
+    set term=xterm
+    colorscheme oblivi2
+  endif
 endif
 
 
