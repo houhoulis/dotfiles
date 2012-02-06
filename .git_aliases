@@ -1,0 +1,20 @@
+
+alias git12="git log | head -n 12"
+alias git25="git log | head -n 25"
+alias gitss="git status ; git log | head -n 8"
+alias gitcm="git checkout master"
+alias gitco="git checkout"
+alias gitdf="git diff"
+alias gitdc="git diff --cached"
+alias gitd1="git diff HEAD^1 HEAD"
+alias gitme="git log | grep -A4 -B1 Houhou | more"
+alias gitmf="git merge --ff-only"
+alias gitmfm="git merge --ff-only master"
+alias gitmm="git merge master"
+
+alias gitssa="git stash save"
+alias gitsli="git stash list"
+alias gitsap="git stash apply"
+alias gitspo="git stash pop"
+alias gitspop="git stash pop"
+
