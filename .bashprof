@@ -1,6 +1,6 @@
 alias ll="ls -alF"
 alias findh="find . -name"
-alias cddev="cd $DEVBASE"
+alias cdd="cd ~/dev"
 alias rxvt="rxvt -sl 20000 -vb -geometry 100x37+19+19"
 alias xterm="xterm -sl 5000 -sb -ms green -bd brown -geometry 100x37+19+19"
 
