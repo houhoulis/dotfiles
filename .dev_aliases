@@ -1,12 +1,15 @@
 alias be="bundle exec"
 alias ber="bundle exec rake"
-alias berspec="bundle exec rake spec"
 
 alias bemigr="bundle exec rake db:migrate"
 alias bestat="bundle exec rake db:migrate:status"
 alias beroll="bundle exec rake db:rollback"
 
-alias rc="bundle exec rails c"
+alias berc="bundle exec rails c"
+alias bers="bundle exec rails s"
+
+alias bert="bundle exec rake test"
+alias bertr="bundle exec rake test:recent"
 
 alias pup="powder up"
 alias pd="powder down"
