@@ -2,7 +2,7 @@ alias be="bundle exec"
 alias ber="bundle exec rake"
 
 alias bemigr="bundle exec rake db:migrate"
-alias bestat="bundle exec rake db:migrate:status"
+alias bestat="bundle exec rake db:migrate:status | tail"
 alias beroll="bundle exec rake db:rollback"
 
 alias berc="bundle exec rails c"
