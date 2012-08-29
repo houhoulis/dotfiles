@@ -5,3 +5,4 @@ alias mv="mv -i"
 alias rxvt="rxvt -sl 20000 -vb -geometry 100x37+19+19"
 alias xterm="xterm -sl 5000 -sb -ms green -bd brown -geometry 100x37+19+19"
 
+export EDITOR="/usr/bin/vim"
