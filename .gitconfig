@@ -1,15 +1,15 @@
 [user]
-	name = Chris Houhoulis
-	email = chris@chrishouhoulis.com
+  name = Chris Houhoulis
+  email = chris@chrishouhoulis.com
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [color]
-	ui = always
-	diff = always
+  ui = always
+  diff = always
 [diff]
-	renames = copies
+  renames = copies
 [status]
-	showUntrackedFiles = all
+  showUntrackedFiles = all
 
 [alias]
         brm = merge --no-ff --log --no-commit
@@ -27,10 +27,12 @@
 [core]
   # excludesfile = /Users/xxxx/.gitignore_global
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [github]
-	user = houhoulis
+  user = houhoulis
+[core]
+  editor = /usr/bin/vim
