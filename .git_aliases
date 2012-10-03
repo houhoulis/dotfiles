@@ -14,7 +14,7 @@ alias gitmfm="git merge --ff-only master"
 alias gitmm="git merge master"
 
 alias gitssv="git add . ; git stash save"
-alias gitsli="git stash list"
+alias gitsli="git stash list | head -15"
 alias gitsap="git stash apply"
 alias gitspo="git stash pop"
 alias gitspop="git stash pop"
