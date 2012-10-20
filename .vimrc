@@ -37,13 +37,13 @@ set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set rulerformat=%15(%c%V\ %p%%%)
-set noincsearch     " do NOT do incremental searching
+set incsearch     " do incremental searching - thanks http://www.moolenaar.net/habits.html
 set hlsearch
 set laststatus=2  " Always display the status line
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
-"need? inoremap <C-U> <C-G>u<C-U>
+inoremap <C-U> <C-G>u<C-U>
 "
 "
 " Switch syntax highlighting on, when the terminal has colors
@@ -104,7 +104,9 @@ set wildmode=list:longest,list:full
 set complete=.,w,t
 
 " Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+" I edit a lot of javascript, do I really want this?
+" let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+set tags=.tags
 
 " Cucumber navigation commands
 autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
@@ -133,8 +135,8 @@ endif
 " from Ben Orenstein (r00k). I should've been keeping track of who I
 " stole stuff from.
 " Center search matches when jumping
-map N Nzz
-map n nzz
+" map N Nzz
+" map n nzz
 set backupdir=~/temp
 set directory=~/temp " Don't clutter my dirs up with swp and tmp files
 set smarttab
