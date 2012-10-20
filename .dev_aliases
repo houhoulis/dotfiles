@@ -18,3 +18,5 @@ alias pup="powder up"
 alias pd="powder down"
 alias pap="powder applog"
 
+# for vim
+alias ctagshere="ctags -R -f .tags"
