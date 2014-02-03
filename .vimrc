@@ -137,8 +137,8 @@ endif
 " Center search matches when jumping
 " map N Nzz
 " map n nzz
-set backupdir=~/temp
-set directory=~/temp " Don't clutter my dirs up with swp and tmp files
+set backupdir=/tmp
+set directory=/tmp " Don't clutter my dirs up with swp and tmp files
 set smarttab
 " Use _ as a word-separator
 set iskeyword-=_
