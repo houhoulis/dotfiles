@@ -44,6 +44,9 @@ set laststatus=2  " Always display the status line
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
 "
 "
 " Switch syntax highlighting on, when the terminal has colors
