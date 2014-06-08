@@ -15,7 +15,7 @@ alias gitmm="git merge master"
 
 alias gitssv="git add . ; git stash save"
 # alias gitsli="git stash list | head -15"
-alias gitsli="git stash list --since='12 months ago' --format='%Cblue %h %Cgreen %gd %Cred %ai %Creset %d %Cgreen %s %Cblue %gn'"
+alias gitsli='git stash list --since="12 months ago" --format="%Cblue%h %Cgreen%gd %Cred%ai %Creset%d %Cgreen%s %Cblue%gn"'
 alias gitsap="git stash apply"
 alias gitspo="git stash pop"
 alias gitspop="git stash pop"
