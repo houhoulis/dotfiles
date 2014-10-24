@@ -12,3 +12,30 @@ export EDITOR="/usr/bin/vim"
 if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
   . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
 fi
+
+# The following two lines make it so that up and down arrow
+# in bash is a filtered search through history based on the
+# characters you've entered in your prompt
+# For example: typing g then up arrow will iterate through
+# your history of commands that  started with g.
+# The more characters you type the more specific the search is.
+# To revert to normal up/down arrow functionality just
+# don't type anything before using the arrow keys
+bind '"\e[A": history-search-backward' #up-arrow through history
+bind '"\e[B": history-search-forward' #down-arrow through history
+
+# function parse_git_dirty {
+#   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+# }
+function parse_git_branch {
+  ref=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d')
+  if [[ $ref != '' ]]; then
+    echo "($ref)"
+  fi
+}
+export PS1="\[\e]2;\w\a\[\e[0;35m\]\# \[\e[0;33m\]\W\[\e[0;32m\]\$(parse_git_branch)\[\e[1;37m\]\$\[\e[0m\] "
+
+# trap commands and echo them to xterm / Terminal titlebar. Must be last line.
+# (from http://unix.stackexchange.com/questions/11223/change-terminal-title)
+trap 'echo -ne "\033]2;$BASH_COMMAND>$(pwd)\007"' DEBUG
+
