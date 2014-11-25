@@ -40,6 +40,8 @@ set rulerformat=%15(%c%V\ %p%%%)
 set incsearch     " do incremental searching - thanks http://www.moolenaar.net/habits.html
 set hlsearch
 set laststatus=2  " Always display the status line
+" set paste         " Cmd-V paste text w/o autoformatting it " problem: this
+" disables the line # and percent in status bar.
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -54,6 +56,11 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
 endif
 
 filetype plugin indent on
+
+" @masukomi
+set nocopyindent
+set nopreserveindent
+set noautoindent
 
 augroup vimrcEx
   au!
