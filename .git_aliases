@@ -1,4 +1,3 @@
-
 alias git12="git log | head -n 12"
 alias git25="git log | head -n 25"
 alias gitss="git status ; git log | head -n 7"
@@ -8,10 +7,9 @@ alias gitdf="git diff"
 alias gitdc="git diff --cached"
 alias gitd1="git diff HEAD^1 HEAD"
 alias githeads="git diff HEAD^1 HEAD"
-alias gitme="git log | grep -A4 -B1 Houhou | more"
+# alias gitme="git log | grep -A4 -B1 Houhou | more"
+# That's pretty much "git log --author Houhou"
 alias gitmf="git merge --ff-only"
-alias gitmfm="git merge --ff-only master"
-alias gitmm="git merge master"
 
 alias gitssv="git add . ; git stash save"
 # alias gitsli="git stash list | head -15"
@@ -19,4 +17,6 @@ alias gitsli='git stash list --since="12 months ago" --format="%Cblue%h %Cgreen%
 alias gitsap="git stash apply"
 alias gitspo="git stash pop"
 alias gitspop="git stash pop"
+
+alias gitlo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 
