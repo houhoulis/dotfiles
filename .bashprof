@@ -6,6 +6,7 @@ alias rxvt="rxvt -sl 20000 -vb -geometry 100x37+19+19"
 alias xterm="xterm -sl 5000 -sb -ms green -bd brown -geometry 100x37+19+19"
 alias pry="pry -r ./config/environment"
 
+export HITHERE="hi there"
 export EDITOR="/usr/bin/vim"
 
 # to enable homebrew git tab completion
@@ -39,5 +40,5 @@ export PS1="\[\e]2;\w\a\[\e[0;35m\]\# \[\e[0;33m\]\W\[\e[0;32m\]\$(parse_git_bra
 
 # trap commands and echo them to xterm / Terminal titlebar. Must be last line.
 # (from http://unix.stackexchange.com/questions/11223/change-terminal-title)
-trap 'echo -ne "\033]2;$BASH_COMMAND>$(pwd)\007"' DEBUG
+#trap 'echo -ne "\033]2;$BASH_COMMAND>$(pwd)\007"' DEBUG
 
