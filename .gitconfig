@@ -10,13 +10,13 @@
   renames = copies
 [status]
   showUntrackedFiles = all
-
 [alias]
-        brm = merge --no-ff --log --no-commit
-        co = checkout
-        sv = stash save
-        li = stash list
-        ap = stash apply
+  brm = merge --no-ff --log --no-commit
+  co = checkout
+  sv = stash save
+  li = stash list
+  ap = stash apply
+  branchdiff = log --left-right --graph --cherry-pick --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
 [push]
         default = tracking
 [gc]
