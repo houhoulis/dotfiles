@@ -20,4 +20,5 @@ alias gitspop="git stash pop"
 
 alias gitlo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gitbd="git log --left-right --graph --cherry-pick --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
+alias gitgr="git log --graph --full-history --all --color --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s %C(blue)(%ar) %C(yellow)<%an>%Creset'"
 
