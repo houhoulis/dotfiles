@@ -31,14 +31,9 @@ bind '"\e[B": history-search-forward' #down-arrow through history
 
 function parse_git_dirty {
   if [[ -n "$(git status 2> /dev/null)" ]]; then
-    dirty_prompt=" * ";
-    # for line in $(git status 2> /dev/null); do
-      if [[ "$(git status 2> /dev/null)" = *nothing\ to\ commit,\ working\ directory\ clean* ]]; then
-        echo "";
-        return;
-      fi
-    # done
-    echo "$dirty_prompt";
+    git_prompt="(";
+    [[ "$(git status 2> /dev/null)" != *nothing\ to\ commit,\ working\ directory\ clean* ]] && git_prompt="$git_prompt * ";
+    echo "$git_prompt$(parse_git_branch))"
   fi
 }
 
@@ -60,7 +55,7 @@ function parse_git_branch {
 }
 ORANGE=$(tput setaf 172)
 # ⮀ ± ⭠ ➦ ✔ ✘ ⚡
-export PS1="\[\e]2;\w\a\[\e[0;35m\]\# \[\e[0;33m\]\W\[\e[0;32m\](\$(parse_git_dirty)\$(parse_git_branch))\[\e[$ORANGE\]➦⮀\[\e[0m\] "
+export PS1="\[\e]2;\w\a\[\e[0;35m\]\# \[\e[0;33m\]\W\[\e[0;32m\]\$(parse_git_dirty)\[\e[$ORANGE\]➦⮀\[\e[0m\] "
 
 # trap commands and echo them to xterm / Terminal titlebar. Must be last line.
 # (from http://unix.stackexchange.com/questions/11223/change-terminal-title)
