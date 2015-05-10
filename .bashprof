@@ -30,22 +30,12 @@ bind '"\e[B": history-search-forward' #down-arrow through history
 #}
 
 function parse_git_dirty {
-  if [[ -n "$(git status 2> /dev/null)" ]]; then
+  if git log &> /dev/null; then
     git_prompt="(";
     [[ "$(git status 2> /dev/null)" != *nothing\ to\ commit,\ working\ directory\ clean* ]] && git_prompt="$git_prompt * ";
     echo "$git_prompt$(parse_git_branch))"
   fi
 }
-
-# function parse_git_dirty {
-#  for line in $(git status 2> /dev/null);
-#    do
-#      if [[ $line = "nothing to commit, working directory clean" ]]; then
-#        echo " * ";
-#      fi
-#    done
-#  end
-#}
 
 function parse_git_branch {
   ref=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e '/^[ *]*/s///')
