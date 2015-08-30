@@ -1,81 +1,66 @@
-set nocompatible  " Use Vim settings, rather than Vi settings
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+
+Plugin 'malept/vim-flog'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+set backupdir=/tmp
+set directory=/tmp " Don't clutter my dirs up with swp and tmp files
+set smarttab
+" Use _ as a word-separator
+set iskeyword-=_
+" When loading text files, wrap them and don't split up words.
+au BufNewFile,BufRead *.txt setlocal wrap
+au BufNewFile,BufRead *.txt setlocal lbr
+au BufNewFile,BufRead *.log setlocal wrap
+au BufNewFile,BufRead *.log setlocal lbr
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path
+nnoremap <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+nnoremap <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+nnoremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" if has("vms")
-  set nobackup
-  set nowritebackup
-" else
-"   set backup
-" endif
-
-call pathogen#infect()
-call pathogen#helptags()
-" call pathogen#runtime_append_all_bundles()
-
-" Color scheme inspired by gedit's oblivion colorscheme.
-" Some of the chalkboard-style colorschemes are not high-contrast
-" enough for reading outdoors.
-" 256 colors only.
-if $COLORTERM == 'gnome-terminal'
-  set term=gnome-256color
-  colorscheme oblivi2
-else
-  if $TERM_PROGRAM == 'Apple_Terminal'
-    colorscheme oblivi2
-  else
-    set t_Co=256
-    " set term=rxvt-unicode
-    set term=xterm
-    colorscheme oblivi2
-  endif
-endif
-
-
-set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set rulerformat=%15(%c%V\ %p%%%)
-set incsearch     " do incremental searching - thanks http://www.moolenaar.net/habits.html
-set hlsearch
-set laststatus=2  " Always display the status line
-" set paste         " Cmd-V paste text w/o autoformatting it " problem: this
-" disables the line # and percent in status bar.
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
-"
-"
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-  set hlsearch
-endif
-
-filetype plugin indent on
-
-" @masukomi
-set nocopyindent
-set nopreserveindent
-set noautoindent
-
-augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-augroup END
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -83,44 +68,12 @@ set shiftwidth=2
 set expandtab
 
 " Display extra whitespace
-"CJH set list listchars=tab:»·,trail:·
-set list listchars=tab:��,trail:�
-
-" Local config
-"if filereadable(".vimrc.local")
-"  source .vimrc.local
-"endif
-
-" Use Ack instead of Grep when available
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor
-endif
-
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+"CJH set list listchars=tab:Â»Â·,trail:Â·
+set list listchars=tab:··,trail:·
 
 " Numbers
 set number
 set numberwidth=5
-
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
-
-" Tab completion options
-set wildmode=list:longest,list:full
-set complete=.,w,t
-
-" Tags
-" I edit a lot of javascript, do I really want this?
-" let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-set tags=.tags
-
-" Cucumber navigation commands
-autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-" :Cuc my text (no quotes) -> runs cucumber scenarios containing "my text"
-command! -nargs=+ Cuc :!ack --no-heading --no-break <q-args> | cut -d':' -f1,2 | xargs bundle exec cucumber --no-color
-
 
 " Get off Croaky's lawn
 nnoremap <Left> :echoe "Use h "<CR>
@@ -139,24 +92,20 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-" from Ben Orenstein (r00k). I should've been keeping track of who I
-" stole stuff from.
-" Center search matches when jumping
-" map N Nzz
-" map n nzz
-set backupdir=/tmp
-set directory=/tmp " Don't clutter my dirs up with swp and tmp files
-set smarttab
-" Use _ as a word-separator
-set iskeyword-=_
-" When loading text files, wrap them and don't split up words.
-au BufNewFile,BufRead *.txt setlocal wrap
-au BufNewFile,BufRead *.txt setlocal lbr
-au BufNewFile,BufRead *.log setlocal wrap
-au BufNewFile,BufRead *.log setlocal lbr
-" Edit another file in the same directory as the current file
-" uses expression to extract path from current file's path
-nnoremap <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-nnoremap <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-nnoremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+  set hlsearch
+endif
+
+set history=50
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set rulerformat=%15(%c%V\ %p%%%)
+set incsearch     " do incremental searching - thanks http://www.moolenaar.net/habits.html
+set hlsearch
+set laststatus=2  " Always display the status line
+" set paste         " Cmd-V paste text w/o autoformatting it " problem: this
+" disables the line # and percent in status bar.
 
