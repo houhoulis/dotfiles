@@ -69,7 +69,8 @@ function parse_git_branch {
 }
 ORANGE=$(tput setaf 172)
 # ⮀ ± ⭠ ➦ ✔ ✘ ⚡
-export PS1="\[\e]2;\w\a\[\e[0;35m\]\# \[\e[0;33m\]\W\[\e[0;32m\]\$(parse_git_dirty)\[\e[$ORANGE\]➦⮀\[\e[0m\] "
+# alt-shift-9 ·, alt-shift-4 ›
+export PS1="\[\e]2;\w\a\[\e[0;35m\]\# \[\e[0;33m\]\W\[\e[0;32m\]\$(parse_git_dirty)\[\e[$ORANGE\]·›\[\e[0m\] "
 
 # trap commands and echo them to xterm / Terminal titlebar. Must be last line.
 # (from http://unix.stackexchange.com/questions/11223/change-terminal-title)
