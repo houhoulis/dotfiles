@@ -37,4 +37,4 @@
 [github]
   user = houhoulis
 [core]
-  editor = /usr/bin/vim
+  editor = vim

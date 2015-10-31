@@ -7,7 +7,7 @@ alias xterm="xterm -sl 5000 -sb -ms green -bd brown -geometry 100x37+19+19"
 alias pry="pry -r ./config/environment"
 
 export HITHERE="hi there"
-export EDITOR="/usr/bin/vim"
+export EDITOR=vim
 
 # to enable homebrew git tab completion
 if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
