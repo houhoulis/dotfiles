@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'rhysd/committia.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -26,7 +27,8 @@ Plugin 'tpope/vim-fugitive'
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 
-Plugin 'malept/vim-flog'
+" Having trouble preventing startup warnings 'Ignoring [foo] because its extensions are not built.'
+" Plugin 'malept/vim-flog'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
