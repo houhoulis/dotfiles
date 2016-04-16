@@ -5,9 +5,22 @@
   autosetuprebase = always
 [color]
   ui = always
+  # showbranch = never
   diff = always
 [diff]
   renames = copies
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  commit = green
+  meta = yellow
+  frag = cyan
+  old = red
+  new = green
+  whitespace = red reverse
 [status]
   showUntrackedFiles = all
 [alias]
@@ -22,12 +35,15 @@
 [push]
         default = tracking
 [gc]
-        reflogExpire = 12 months
-        reflogExpireUnreachable = 12 months
-        rerereunresolved = 60 days
-        pruneExpire = 5 weeks ago
+  reflogExpire = 12 months
+  reflogExpireUnreachable = 12 months
+  rerereunresolved = 60 days
+  pruneExpire = 5 weeks ago
 [core]
   # excludesfile = /Users/xxxx/.gitignore_global
+  autocrlf = input
+  pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+  editor = vim
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
@@ -36,5 +52,5 @@
   trustExitCode = true
 [github]
   user = houhoulis
-[core]
-  editor = vim
+[difftool]
+  prompt = false
