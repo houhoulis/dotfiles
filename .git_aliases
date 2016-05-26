@@ -25,5 +25,7 @@ alias gitlo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 alias gitbd="git log --left-right --graph --cherry-pick --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
 alias gitgr="git log --graph --full-history --all --color --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s %C(blue)(%ar) %C(yellow)<%an>%Creset'"
 
+alias gitref="git log -g --date=format:'%Y%m%d %H%m%S' --pretty=format:'%Creset%C(yellow)%h %Cred%gd %C(yellow)%C(reverse)%gs%>|(118)%C(reverse)%Cblue%ad%Cgreen%an%Cblue%<|(185,trunc)%s%Cgreen%<(17,trunc)%D'"
+
 alias gitrecent="git branch -vv --sort=-authordate"
 alias gitrh="git branch -vv --sort=-authordate | head -15"
