@@ -33,7 +33,7 @@
   lo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   gr = log --graph --full-history --all --color --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s %C(blue)(%ar) %C(yellow)<%an>%Creset'
 [push]
-        default = tracking
+  default = tracking
 [gc]
   reflogExpire = 12 months
   reflogExpireUnreachable = 12 months
@@ -54,3 +54,10 @@
   user = houhoulis
 [difftool]
   prompt = false
+# Requires git >= 2.9!
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
+[interactive]
+  diffFilter = diff-highlight
