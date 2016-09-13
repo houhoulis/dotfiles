@@ -56,7 +56,7 @@ bind '"\e[B": history-search-forward' #down-arrow through history
 function parse_git_dirty {
   if git log &> /dev/null; then
     git_prompt="(";
-    [[ "$(git status 2> /dev/null)" != *nothing\ to\ commit,\ working\ directory\ clean* ]] && git_prompt="$git_prompt * ";
+    [[ "$(git status | tail -1 2> /dev/null)" != *nothing\ to\ commit,\ working\ tree\ clean* ]] && git_prompt="$git_prompt * ";
     echo "$git_prompt$(parse_git_branch))"
   fi
 }
