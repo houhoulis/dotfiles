@@ -1,6 +1,6 @@
 IRB.conf[:AUTO_INDENT] = true
 IRB.conf[:SAVE_HISTORY] = 50
-# IRB.conf[:VERBOSE] = true
+IRB.conf[:VERBOSE] = true
 
 if IRB.conf[:PROMPT][:RVM]
   prompt_n = IRB.conf[:PROMPT][:RVM][:PROMPT_N].gsub(" ","")
