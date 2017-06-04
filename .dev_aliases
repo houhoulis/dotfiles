@@ -1,9 +1,9 @@
 alias be="bundle exec"
 alias berk="bundle exec rake"
 
-alias bemigr="bundle exec rake db:migrate"
+alias bemigr="time bundle exec rake --trace db:migrate"
 alias bestat="bundle exec rake db:migrate:status"
-alias beroll="bundle exec rake db:rollback"
+alias beroll="bundle exec rake --trace db:rollback"
 alias bedown="bundle exec rake db:migrate:status | grep -n ' down '"
 
 alias bert="bundle exec rake test"
