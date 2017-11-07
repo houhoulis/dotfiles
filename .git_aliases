@@ -19,7 +19,7 @@ alias gitslih="gitsli | head -15"
 alias gitsap="git stash apply"
 alias gitspo="git stash pop"
 alias gitspop="git stash pop"
-alias gitcp="git cherry-pick"
+alias gitcp="git cherry-pick -x"
 
 alias gitlo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gitbd="git log --left-right --graph --cherry-pick --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
