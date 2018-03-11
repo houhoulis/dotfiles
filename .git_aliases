@@ -1,6 +1,7 @@
 alias git12="git log --decorate | head -n 12"
 alias git25="git log --decorate | head -n 25"
-alias gitss="git status ; git log --decorate | head -n 7"
+alias git1="git log --decorate | head -n 1"
+alias gitss="git status -uno ; git log --decorate | head -n 5"
 alias gitcm="git checkout master ; gitss"
 alias gitcd="git checkout development ; gitss"
 alias gitco="git checkout"
