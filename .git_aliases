@@ -4,16 +4,15 @@ alias git1="git log --decorate | head -n 1"
 alias gitss="git status -uno ; git log --decorate | head -n 5"
 alias gitcm="git checkout master ; gitss"
 alias gitcd="git checkout development ; gitss"
-alias gitco="git checkout"
 alias gitdf="git diff"
 alias gitdc="git diff --cached"
-alias gitd1="git diff HEAD^1 HEAD"
 alias githeads="git diff HEAD^1 HEAD"
+alias gitap="git add -p"
 # alias gitme="git log | grep -A4 -B1 Houhou | more"
 # That's pretty much "git log --author Houhou"
+
 alias gitmf="git merge --ff-only"
 
-alias gitssv="git add . ; git stash save"
 # alias gitsli="git stash list | head -15"
 alias gitsli='git stash list --since="12 months ago" --format="%Cblue%h %Cgreen%gd %Cred%ai %Creset%d %Cgreen%s %Cblue%gn"'
 alias gitslih="gitsli | head -15"
