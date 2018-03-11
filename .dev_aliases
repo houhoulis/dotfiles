@@ -21,3 +21,30 @@ alias bers="bundle exec rails s"
 
 # for vim
 alias ctagshere="ctags -R -f .tags"
+
+# large tables in a postgres db
+# $ bigt <database_name> [postgres username]
+function bigt {
+    if [ $# -gt 1 ]; then
+        user="-U$2"
+    elif [ "$PG_USER" != "" ]; then
+        user="-U$PG_USER"
+    else
+        user=""
+    fi
+
+    psql -d "$1" "$user" -c '\dt+' | egrep -e 'GB' -e " [0-9]{3,} MB"
+}
+# large indexes in a postgres db
+# $ bigi <database_name> [postgres username]
+function bigi {
+    if [ $# -gt 1 ]; then
+        user="-U$2"
+    elif [ "$PG_USER" != "" ]; then
+        user="-U$PG_USER"
+    else
+        user=""
+    fi
+
+    psql -d "$1" "$user" -c '\di+' | egrep -e 'GB' -e " [0-9]{3,} MB"
+}
