@@ -19,6 +19,9 @@ alias berl="bundle exec rails"
 alias berc="bundle exec rails c"
 alias bers="bundle exec rails s"
 
+# Rust
+alias ct="hr v ; cargo test -- --test-threads=1 --nocapture --color always" # `brew info hr`
+
 # for vim
 alias ctagshere="ctags -R -f .tags"
 
