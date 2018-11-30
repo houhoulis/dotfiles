@@ -21,6 +21,17 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'rhysd/committia.vim'
 Plugin 'mattn/flappyvird-vim'
 Plugin 'rust-lang/rust.vim'
+" Plugin 'vim-scripts/TeTrIs.vim'
+" Plugin 'vim-scripts/sokoban.vim'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'vim-scripts/Gundo'
+" Colors:
+Plugin 'vim-scripts/oh-l-l'
+Plugin 'vim-scripts/peaksea'
+Plugin 'vim-scripts/darkspectrum'
+Plugin 'vim-scripts/ScrollColors'
+
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -81,6 +92,7 @@ else
   endif
 endif
 " colorscheme mustanghcalves
+colorscheme peaksea
 
 set history=50
 set ruler         " show the cursor position all the time
@@ -172,8 +184,8 @@ let g:html_indent_tags = 'li\|p'
 " Center search matches when jumping
 " map N Nzz
 " map n nzz
-set backupdir=/tmp
-set directory=/tmp " Don't clutter my dirs up with swp and tmp files
+set backupdir=~/temp
+set directory=~/temp " Don't clutter my dirs up with swp and tmp files
 
 " Get off Croaky's lawn
 nnoremap <Left> :echoe "Use h "<CR>
