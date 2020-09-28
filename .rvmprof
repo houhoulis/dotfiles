@@ -1,3 +1,5 @@
 alias rvminfo="rvm info | tail"
 export rvm_pretty_print_flag=1
+export rvm_autolibs_flag=2
+export rvm_gem_options="--no-document"
 
