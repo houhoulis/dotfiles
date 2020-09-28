@@ -1,0 +1,1 @@
+AmazingPrint.defaults = { indent: -4 } # left-justify hash keys
