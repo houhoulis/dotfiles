@@ -8,6 +8,8 @@ alias pry="pry -r ./config/environment"
 
 export HITHERE="hi there"
 export EDITOR=vim
+export HOMEBREW_NO_INSTALL_CLEANUP=wtfofcoursenot
+alias brew='[[ -n "$HOMEBREW_NO_INSTALL_CLEANUP" ]] && brew'
 
 # to enable homebrew git tab completion
 if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
