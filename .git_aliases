@@ -2,11 +2,11 @@ alias git12="git log --decorate | head -n 12"
 alias git25="git log --decorate | head -n 25"
 alias git1="git log --decorate | head -n 1"
 alias gitss="git status -uno ; git log --decorate | head -n 5"
-alias gitcm="git checkout master ; gitss"
+alias gitcm="git checkout main ; gitss"
 alias gitcd="git checkout development ; gitss"
 alias gitdf="git diff"
 alias gitdc="git diff --cached"
-alias githeads="git diff HEAD^1 HEAD"
+alias githeads="git diff HEAD~1 HEAD"
 alias gitap="git add -p"
 # alias gitme="git log | grep -A4 -B1 Houhou | more"
 # That's pretty much "git log --author Houhou"
@@ -29,3 +29,7 @@ alias gitref="git log -g --date=format:'%Y%m%d %H%m%S' --pretty=format:'%Creset%
 
 alias gitrecent="git branch -vv --sort=-authordate"
 alias gitrh="git branch -vv --sort=-authordate | head -15"
+
+
+# "disk usage" in the history of the repo: https://twitter.com/noahsussman/status/1092134869096976385
+alias gitdu="git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | sed -n 's/^blob //p' | gsort -rV --key=2 | cut -c 1-12,41- | gnumfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest | less"
