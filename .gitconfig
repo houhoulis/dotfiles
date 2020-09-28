@@ -1,3 +1,8 @@
+[init]
+  defaultBranch = main
+  # An alternative to "defaultBranch", but obsoleted by git implementing "defaultBranch":
+  #   templateDir = ~/.git_main
+  # where the file '~/.git_main/HEAD' consists of 'ref: refs/heads/main\n'
 [log]
   decorate = auto
 [user]
@@ -35,6 +40,8 @@
   lo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   gr = log --graph --full-history --all --color --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s %C(blue)(%ar) %C(yellow)<%an>%Creset'
   grog = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
+  lol  = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [push]
   default = tracking
 [gc]
@@ -47,20 +54,14 @@
   autocrlf = input
   pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
   editor = vim
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
-[mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
 [github]
   user = houhoulis
 [difftool]
   prompt = false
 # Requires git >= 2.9!
 [pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
+  log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+  show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+  diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 [interactive]
-  diffFilter = diff-highlight
+  diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
