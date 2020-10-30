@@ -165,6 +165,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
+
+" :vsplit opens new file on right, not on left: https://stackoverflow.com/a/22614431/1066093
+set splitright
+
 " Numbers
 "set number
 "set numberwidth=5
