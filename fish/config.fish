@@ -9,9 +9,9 @@ set -x EDITOR vim
 set -x MARKPATH "$HOME/.marks"
 set -x NVM_DIR "$HOME/.nvm"
 
-set gitcontrib /usr/local/share/git-core/contrib
-set --path -x PATH "/Users/c/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:$gitcontrib:$gitcontrib/contacts:$gitcontrib/diff-highlight:$gitcontrib/git-jump:$gitcontrib/stats:$gitcontrib/subtree:$gitcontrib/workdir:$PATH:$HOME/.cargo/bin:$HOME/.rvm/bin"
-set -e gitcontrib
+set _gitcontrib /usr/local/share/git-core/contrib
+set --path -x PATH "/Users/c/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$PATH:$HOME/.cargo/bin:$HOME/.rvm/bin"
+set --erase _gitcontrib
 
 # See https://rvm.io/integration/fish
 rvm default
@@ -24,9 +24,13 @@ abbr cdd cd ~/d
 abbr git12 "git log --decorate | head -n 12"
 abbr git25 "git log --decorate | head -n 25"
 abbr git1 "git log --decorate | head -n 1"
-abbr gitss "git status -uno ; git log --decorate | head -n 5"
-abbr gitcm "git checkout main ; gitss"
-abbr gitcd "git checkout development ; gitss"
+
+set _gitss "git status -uno && git log --decorate | head -n 5"
+abbr gitss $_gitss
+abbr gitcm "git checkout main && $_gitss"
+abbr gitcd "git checkout development && $_gitss"
+set --erase _gitss
+
 abbr gitdf "git diff"
 abbr gitdc "git diff --cached"
 abbr githeads "git diff HEAD~1 HEAD"
