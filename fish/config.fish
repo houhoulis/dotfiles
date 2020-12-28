@@ -3,6 +3,11 @@ if test -f ~/.config/fish/config.local.fish
   . ~/.config/fish/config.local.fish
 end
 
+# By default, Ctrl-D closes terminal tabs if the command line is empty.
+# I don't want that behavior. I'd ideally have only the bash default behavior.
+bind --erase --all \cd
+# (Putting this bind statement in a fish_user_key_bindings function, as the docs seem to suggest, has no effect.)
+
 set -x HOMEBREW_NO_INSTALL_CLEANUP wtfofcoursenot
 set -x HITHERE "hi there"
 set -x EDITOR vim
