@@ -14,9 +14,10 @@ set -x HITHERE "hi there"
 set -x EDITOR vim
 set -x MARKPATH "$HOME/.marks"
 set -x NVM_DIR "$HOME/.nvm"
+set -x FISH_CONFIG_PATH "$HOME/.config/fish"
 
 set _gitcontrib /usr/local/share/git-core/contrib
-set --path -x PATH "/Users/c/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$PATH:$HOME/.cargo/bin:$HOME/.rvm/bin"
+set --path -x PATH "$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$PATH:$HOME/.cargo/bin:$HOME/.rvm/bin"
 set --erase _gitcontrib
 
 # See https://rvm.io/integration/fish
