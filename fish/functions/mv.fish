@@ -1,3 +1,3 @@
 function mv
-    /bin/mv -i $argv
+    /bin/mv -iv $argv
 end
