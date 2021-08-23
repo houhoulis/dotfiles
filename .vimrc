@@ -35,7 +35,7 @@ Plugin 'vim-scripts/darkspectrum'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'vim/killersheep'
 
-Plugin 'masukomi/rainbow_parentheses.vim'
+"Plugin 'masukomi/rainbow_parentheses.vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -83,13 +83,13 @@ autocmd BufWinLeave * call clearmatches()
 let ruby_space_errors = 1
 
 " https://github.com/masukomi/rainbow_parentheses.vim
-augroup RainbowParentheses
-    au!
-    au VimEnter * RainbowParenthesesToggle
-    au Syntax * RainbowParenthesesLoadRound
-    au Syntax * RainbowParenthesesLoadSquare
-    au Syntax * RainbowParenthesesLoadBraces
-augroup END
+"augroup RainbowParentheses
+"    au!
+"    au VimEnter * RainbowParenthesesToggle
+"    au Syntax * RainbowParenthesesLoadRound
+"    au Syntax * RainbowParenthesesLoadSquare
+"    au Syntax * RainbowParenthesesLoadBraces
+"augroup END
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
