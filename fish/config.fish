@@ -21,7 +21,8 @@ set --path -x PATH "$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:
 set --erase _gitcontrib
 
 # See https://rvm.io/integration/fish
-rvm default
+#CJH rvm default
+rvm > /dev/null
 
 abbr -a -g rvminfo "rvm info | tail"
 
