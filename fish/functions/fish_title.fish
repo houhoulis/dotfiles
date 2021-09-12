@@ -16,6 +16,8 @@ function fish_title
         set -l shortened_dir ''
         if [ (pwd) = $HOME ]
             set shortened_dir "~"
+        else if test (string length (pwd)) -lt 9
+            set shortened_dir (pwd)
         else
             set shortened_dir ".."(echo (string sub --start=-8 (echo (string split -r -m1 / (pwd))[-1])))
         end
