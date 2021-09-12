@@ -1,9 +1,9 @@
 function jump
-  set TARGET_NAME $argv[1]
-  echo $TARGET_NAME
-  echo "$MARKPATH/$TARGET_NAME"
-#  echo "$MARKPATH/$HELL" # 2>/dev/null || echo "No such mark: $1"
-#  /usr/bin/cd -P "$MARKPATH/$TARGET_NAME" 2>/dev/null || echo "No such mark: $TARGET_NAME"
-  cd "$MARKPATH/$TARGET_NAME" 2>/dev/null || echo "No such mark: $TARGET_NAME"
+  set -l mark "$MARKPATH/$argv[1]"
+  test -L $mark; or echo "No such mark: $mark" && return 1
+  set -l destination (realpath $mark)
+  test -d $destination; or echo "No such target directory: $destination" && return 1
+  # echo "mark: $mark; real target: $destination"
+  cd $destination
 end
 
