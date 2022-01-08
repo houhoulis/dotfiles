@@ -23,6 +23,8 @@ Plugin 'mattn/flappyvird-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'andys8/vim-elm-syntax'
 Plugin 'dag/vim-fish'
+Plugin 'duggiefresh/vim-easydir'
+Plugin 'elixir-editors/vim-elixir'
 
 " Plugin 'vim-scripts/TeTrIs.vim'
 " Plugin 'vim-scripts/sokoban.vim'
