@@ -81,3 +81,11 @@ abbr bers "bundle exec rails s"
 
 # rust
 abbr ct "hr v ; cargo test -- --test-threads=1 --nocapture --color always" # see `brew info hr`
+
+# fd
+set -l FD_OPTIONS "--hidden --exclude .git/ --exclude node_modules/"
+abbr fd "fd $FD_OPTIONS"
+
+# fzf
+set -x FZF_DEFAULT_COMMAND "git ls-files --cached --modified --others --exclude-standard | fd $FD_OPTIONS"
+set -x FZF_DEFAULT_OPTS "--info=inline --height 45% --preview 'bat --style=numbers --color=always {} || cat {}' --reverse --multi --bind='ctrl-y:execute-silent(echo {+} | pbcopy)' --border"
