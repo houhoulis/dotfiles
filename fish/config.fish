@@ -45,8 +45,12 @@ abbr gitdc "git diff --cached"
 abbr githeads "git diff HEAD~1 HEAD"
 abbr gitap "git add -p"
 abbr gitme "git log --no-color | rg -A4 -B1 ouhou | more"
-abbr gitsli 'git stash list --since="12 months ago" --format="%Cblue%h %Cgreen%gd %Cred%ai %Creset%d %Cgreen%s %Cblue%gn"'
-abbr gitslih "gitsli | head -15"
+
+set _gitsli 'git stash list --since="12 months ago" --format="%Cblue%h %Cgreen%gd %Cred%ai %Creset%d %Cgreen%s %Cblue%gn"'
+abbr gitsli $_gitsli
+abbr gitslih "$_gitsli | head -15"
+set --erase _gitsli
+
 abbr gitsap "git stash apply"
 abbr gitspo "git stash pop"
 abbr gitspop "git stash pop"
