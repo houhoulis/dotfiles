@@ -34,10 +34,11 @@ abbr git12 "git log --decorate | head -n 12"
 abbr git25 "git log --decorate | head -n 25"
 abbr git1 "git log --decorate | head -n 1"
 
-set _gitss "git status -uno && git log --decorate | head -n 5"
+set _gitss "git status -uno && git log --decorate | head -n 6"
 abbr gitss $_gitss
 abbr gitcm "git checkout main && $_gitss"
 abbr gitcd "git checkout development && $_gitss"
+abbr gitcms "git checkout master && $_gitss"
 set --erase _gitss
 
 abbr gitdf "git diff"
