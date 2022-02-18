@@ -3,9 +3,9 @@ function batfiles --argument-names 'filename' 'path' 'lines' -d "Search for file
 
     set -l find_result
     if test -z "$path"
-        set find_result (fdbn "$filename")
+        set find_result (fd --hidden --exclude .git/ --exclude node_modules/ "$filename")
     else
-        set find_result (fdbn "$filename" "$path")
+        set find_result (fd --hidden --exclude .git/ --exclude node_modules/ "$filename" "$path")
     end
 
     if test -z "$find_result"
