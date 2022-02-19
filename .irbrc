@@ -1,21 +1,19 @@
 IRB.conf[:AUTO_INDENT] = true
-IRB.conf[:SAVE_HISTORY] = 50
-IRB.conf[:VERBOSE] = true
+#IRB.conf[:USE_SINGLELINE] = true
+IRB.conf[:ECHO_ON_ASSIGNMENT] = true
+IRB.conf[:ECHO] = true
+IRB.conf[:IRB_NAME] = RUBY_VERSION
 
-if IRB.conf[:PROMPT][:RVM]
-  prompt_n = IRB.conf[:PROMPT][:RVM][:PROMPT_N].gsub(" ","")
-  prompt_i = IRB.conf[:PROMPT][:RVM][:PROMPT_I].gsub(" ","")
-  prompt_c = IRB.conf[:PROMPT][:RVM][:PROMPT_C].gsub(" ","")
-  prompt_s = IRB.conf[:PROMPT][:RVM][:PROMPT_S].gsub(" ","")
-
-  IRB.conf[:PROMPT][:TIGHTER] = {
-    :PROMPT_N => prompt_n,
-    :PROMPT_I => prompt_i,
-    :PROMPT_C => prompt_c,
-    :PROMPT_S => prompt_s,
-    :RETURN => " => %s\n",
-    :AUTO_INDENT => true
-  }
+def time &blk
+  t = Time.now
+  result = blk.call if block_given?
+  p "Took #{(Time.now - t).round(4)} seconds."
+  result
 end
 
-IRB.conf[:PROMPT_MODE] = :TIGHTER
+module Enumerable
+  def count_by &blk ; if block_given? ; gps = group_by &blk ; gps.reduce({}) {|memo, (k, vs)| memo.merge({ k => vs.count }) } ; else ; to_enum(:count_by) ; end ; end
+  def counts ; count_by {|x|x} ; end
+end
+
+puts "✨💜✨"
