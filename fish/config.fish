@@ -93,12 +93,12 @@ abbr fd "fd $FD_OPTIONS"
 
 # fzf
 set -x FZF_DEFAULT_COMMAND "git ls-files --cached --modified --others --exclude-standard | fd $FD_OPTIONS"
-set -x FZF_DEFAULT_OPTS "--info=inline --height 45% --preview 'bat --style=numbers --color=always {} || cat {}' --reverse --cycle --multi --bind='ctrl-y:execute-silent(echo {+} | pbcopy)' --border"
+set -x FZF_DEFAULT_OPTS "--info=inline --height 55% --preview 'bat --style=numbers --color=always {} || cat {}' --reverse --cycle --multi --bind='ctrl-y:execute-silent(echo {+} | pbcopy)' --border"
 fzf_configure_bindings
 
 # dust
 abbr du "dust -prs -d 1"
-abbr dust "dust -prs"
+abbr dust "dust -prs -d 1"
 
 # btop
 abbr top btop
