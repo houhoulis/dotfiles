@@ -68,7 +68,8 @@ _completemarks() {
   COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
   return 0
 }
-complete -F _completemarks jump unmark
+# doesn't seem to actually work in zsh
+# complete -F _completemarks jump unmark
 
 
 # The following two lines make it so that up and down arrow
