@@ -3,6 +3,13 @@ if test -f ~/.config/fish/config.local.fish
   . ~/.config/fish/config.local.fish
 end
 
+
+# # Default stanza in fresh fish shell 3.5 install:
+# if status is-interactive
+#     # Commands to run in interactive sessions can go here
+# end
+
+
 # By default, Ctrl-D closes terminal tabs if the command line is empty.
 # I don't want that behavior. I'd ideally have only the bash default behavior.
 bind --erase --all \cd
