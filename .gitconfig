@@ -16,6 +16,7 @@
   diff = always
 [diff]
   renames = copies
+  colorMoved = default
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = red bold 52
@@ -52,16 +53,29 @@
 [core]
   # excludesfile = /Users/xxxx/.gitignore_global
   autocrlf = input
-  pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+  # pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+  pager = delta # see https://github.com/dandavison/delta
   editor = vim
 [github]
   user = houhoulis
 [difftool]
   prompt = false
 # Requires git >= 2.9!
-[pager]
-  log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
-  show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
-  diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+
+# [pager]
+#   log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+#   show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+#   diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 [interactive]
-  diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
+  # diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
+  diffFilter = delta --color-only
+[add.interactive]
+  useBuiltin = false # required for git 2.37.0
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  line-numbers = true
+  minus-style = syntax "#550000"
+  plus-style = syntax "#004400"
+[merge]
+  conflictstyle = diff3
