@@ -1,13 +1,11 @@
 [init]
   defaultBranch = main
-  # An alternative to "defaultBranch", obsoleted by git implementing "defaultBranch":
-  #   templateDir = ~/.git_main
-  # where the file '~/.git_main/HEAD' consists of 'ref: refs/heads/main\n'
 [log]
   decorate = auto
 [user]
   name = Chris Houhoulis
-  email = chris@chrishouhoulis.com
+[remote "upstream"]
+  tagOpt = --tags
 [branch]
   autosetuprebase = always
 [color]
