@@ -25,7 +25,9 @@ set -x NVM_DIR "$HOME/.nvm"
 set -x FISH_CONFIG_PATH "$HOME/.config/fish"
 
 set _gitcontrib /usr/local/share/git-core/contrib
-set --path -x PATH "$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$PATH:$HOME/.cargo/bin:$HOME/.rvm/bin"
+set --path -x PATH "$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$PATH:$HOME/.cargo/bin:$HOME/.rvm/bin:$HOME/.mix/escripts"
+# I don't know why this was added:
+# set --path -x PATH "/Users/chrish/.cpan/build/App-cpanminus-1.7046-0/blib/script"
 set --erase _gitcontrib
 
 # See https://rvm.io/integration/fish
@@ -109,3 +111,5 @@ abbr dust "dust -prs -d 1"
 
 # btop
 abbr top btop
+
+abbr which where
