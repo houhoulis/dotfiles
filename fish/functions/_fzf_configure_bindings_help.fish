@@ -13,7 +13,9 @@ DESCRIPTION
         Search git branches  |  Ctrl+Alt+B (B for branches)  |  --git_branches
         Search history       |  Ctrl+R     (R for reverse)   |  --history
         Search variables     |  Ctrl+V     (V for variable)  |  --variables
-        Magic mode           |  Alt+M      (M for magic)     |  --magic
+        Search processes     |  Ctrl+Alt+P (P for process)   |  --processes
+	    Magic mode           |  Alt+M      (M for magic)     |  --magic
+	    Pick mode            |  Alt+X                        |  --pick
     An option with a key sequence value overrides the binding for its feature, while an option
     without a value disables the binding. A feature that is not customized retains its default
     mnemonic binding specified above. Key bindings are installed for default and insert modes.
