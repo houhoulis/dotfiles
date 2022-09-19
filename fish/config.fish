@@ -48,8 +48,8 @@ abbr gitcd "git checkout development && $_gitss"
 abbr gitcms "git checkout master && $_gitss"
 set --erase _gitss
 
-abbr gitdf "git diff"
-abbr gitdc "git diff --cached"
+abbr gitdf "git diff --diff-algorithm=minimal"
+abbr gitdc "git diff --cached --diff-algorithm=minimal"
 abbr githeads "git diff HEAD~1 HEAD"
 abbr gitap "git add -p"
 abbr gitme "git log --no-color | rg -A4 -B1 ouhou | more"
