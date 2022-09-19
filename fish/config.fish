@@ -23,6 +23,11 @@ set -x EDITOR vim
 set -x MARKPATH "$HOME/.marks"
 set -x NVM_DIR "$HOME/.nvm"
 set -x FISH_CONFIG_PATH "$HOME/.config/fish"
+# these two from Jason Axelson, https://jasonaxelson.com/talks/elixirconf2022
+# To enable: iex> open Enum.map
+set -x ELIXIR_EDITOR "codium --goto __FILE__:__LINE__"
+# To keep input history across iex sessions:
+set -x ERL_AFLAGS "-kernel shell_history enabled"
 
 set _gitcontrib /usr/local/share/git-core/contrib
 set --path -x PATH "$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$PATH:$HOME/.cargo/bin:$HOME/.rvm/bin:$HOME/.mix/escripts"
