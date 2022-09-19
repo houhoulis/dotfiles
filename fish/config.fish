@@ -118,3 +118,5 @@ abbr dust "dust -prs -d 1"
 abbr top btop
 
 abbr which where
+
+abbr rg "rg --hidden --unrestricted --no-ignore --no-require-git"
