@@ -1,9 +1,3 @@
-# Pull in a local config file, if it exists, for stuff that needs to be .gitignored
-if test -f ~/.config/fish/config.local.fish
-  . ~/.config/fish/config.local.fish
-end
-
-
 # # Default stanza in fresh fish shell 3.5 install:
 # if status is-interactive
 #     # Commands to run in interactive sessions can go here
@@ -120,3 +114,9 @@ abbr top btop
 abbr which where
 
 abbr rg "rg --hidden --unrestricted --no-ignore --no-require-git"
+
+# Pull in a local config file, if it exists, for stuff that needs to be .gitignored
+# Overwrite config above in this file.
+if test -f ~/.config/fish/config.local.fish
+  . ~/.config/fish/config.local.fish
+end
