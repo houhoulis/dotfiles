@@ -9,9 +9,15 @@
 bind --erase --all \cd
 # (Putting this bind statement in a fish_user_key_bindings function, as the docs seem to suggest, has no effect.)
 
+# Configure Homebrew, including disabling automatic behavior. https://docs.brew.sh/Manpage#environment
 set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK wtfofcoursenot
 set -x HOMEBREW_NO_INSTALL_CLEANUP wtfofcoursenot
 set -x HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS 36524.25 # 100 years in days, on average 🙃
+set -x HOMEBREW_NO_AUTO_UPDATE 1
+# Not going to try this since they don't support or respect my usage:
+# set -x HOMEBREW_INSTALL_FROM_API 1 # they want us to try it; https://brew.sh/2022/09/07/homebrew-3.6.0/
+set -x HOMEBREW_NO_ANALYTICS 1
+
 set -x HITHERE "hi there"
 set -x EDITOR vim
 set -x MARKPATH "$HOME/.marks"
