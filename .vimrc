@@ -36,6 +36,7 @@ Plugin 'vim-scripts/peaksea'
 Plugin 'vim-scripts/darkspectrum'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'vim/killersheep'
+Plugin 'powerman/vim-plugin-AnsiEsc'
 
 "Plugin 'masukomi/rainbow_parentheses.vim'
 
