@@ -119,7 +119,7 @@ abbr top btop
 
 abbr which where
 
-abbr rg "rg --hidden --unrestricted --no-ignore --no-require-git"
+abbr rg "rg --hidden --unrestricted --no-ignore --no-require-git --max-columns=500 --max-columns-preview -g '!.git/**' -g '!node_modules/**'"
 
 # Pull in a local config file, if it exists, for stuff that needs to be .gitignored
 # Overwrite config above in this file.
