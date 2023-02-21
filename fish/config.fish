@@ -48,6 +48,7 @@ abbr git12 "git log --decorate | head -n 12"
 abbr git25 "git log --decorate | head -n 25"
 abbr git1 "git log --decorate | head -n 1"
 
+abbr gits "git status"
 set _gitss "git status -uno && git log --decorate | head -n 6"
 abbr gitss $_gitss
 abbr gitcm "git checkout main && $_gitss"
