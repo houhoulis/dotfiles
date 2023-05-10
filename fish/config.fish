@@ -14,9 +14,11 @@ set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK wtfofcoursenot
 set -x HOMEBREW_NO_INSTALL_CLEANUP wtfofcoursenot
 set -x HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS 36524.25 # 100 years in days, on average 🙃
 set -x HOMEBREW_NO_AUTO_UPDATE 1
-# Not going to try this since they don't support or respect my usage:
-# set -x HOMEBREW_INSTALL_FROM_API 1 # they want us to try it; https://brew.sh/2022/09/07/homebrew-3.6.0/
-set -x HOMEBREW_NO_ANALYTICS 1
+# set -x HOMEBREW_AUTO_UPDATE_SECS 123456789012345678901234567890
+# Check Homebrew's API for new formulae or cask data every `HOMEBREW_API_AUTO_UPDATE_SECS` seconds. Alternatively, disable API auto-update checks entirely with HOMEBREW_NO_AUTO_UPDATE
+# set -x HOMEBREW_API_AUTO_UPDATE_SECS 123456789012345678901234567890
+# set -x HOMEBREW_NO_ANALYTICS 1
+set -x HOMEBREW_NO_GOOGLE_ANALYTICS 1
 
 set -x HITHERE "hi there"
 set -x EDITOR vim
@@ -30,7 +32,7 @@ set -x ELIXIR_EDITOR "codium --goto __FILE__:__LINE__"
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 
 set _gitcontrib /usr/local/share/git-core/contrib
-set --path -x PATH "$HOME/bin:$HOME/.cargo/bin:$HOME/.mix/escripts:$HOME/.rvm/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$HOME/Library/Python/3.10/bin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
+set --path -x PATH "$HOME/bin:$HOME/.cargo/bin:$HOME/.mix/escripts:$HOME/.rvm/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$HOME/Library/Python/3.11/bin:$HOME/Library/Python/3.10/bin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
 # I don't know why this was added:
 # set --path -x PATH "/Users/chrish/.cpan/build/App-cpanminus-1.7046-0/blib/script"
 set --erase _gitcontrib
@@ -122,8 +124,7 @@ abbr which where
 
 abbr rg "rg --hidden --unrestricted --no-ignore --no-require-git --max-columns=500 --max-columns-preview -g '!.git/**' -g '!node_modules/**'"
 
-# Pull in a local config file, if it exists, for stuff that needs to be .gitignored
-# Overwrite config above in this file.
+# Pull in a local config file, if it exists, to overwrite config above
 if test -f ~/.config/fish/config.local.fish
   . ~/.config/fish/config.local.fish
 end
