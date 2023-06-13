@@ -68,20 +68,22 @@
 [interactive]
   # diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
   diffFilter = delta --color-only
-[add.interactive]
-  useBuiltin = false # required for git 2.37.0
+# Needed for delta, but commenting out because removed in git 2.40
+# Apparently not needed because git was fixed in 2.38? https://github.com/dandavison/delta/issues/1114#issuecomment-1265920597
+# [add.interactive]
+#   useBuiltin = false # required for git 2.37.0
 [delta]
   syntax-theme = Coldark-Dark
   navigate = true    # use n and N to move between diff sections
   light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
   line-numbers = false
   keep-plus-minus-markers = true
-  minus-style = normal "#400000"
-  plus-style = auto "#002a00"
+  minus-style = normal "#380000"
+  plus-style = auto "#002600"
   zero-style = normal dim blink normal
   side-by-side = false
 # https://dandavison.github.io/delta/features-named-groups-of-settings.html
-[delta "sidebyside"]
-  side-by-side = true # However, I haven't gotten DELTA_FEATURES='+side-by-side' or DELTA_FEATURES='+sidebyside' to work
+[delta "side-by-side"]
+  side-by-side = true # However, I haven't gotten DELTA_FEATURES=+side-by-side or DELTA_FEATURES=side-by-side to work 🙁
 [merge]
   conflictstyle = diff3
