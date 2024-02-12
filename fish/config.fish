@@ -124,6 +124,12 @@ abbr which where
 
 abbr rg "rg --hidden --unrestricted --no-ignore --no-require-git --max-columns=500 --max-columns-preview -g '!.git/**' -g '!node_modules/**'"
 
+if test -f ~/bin/mise
+  ~/bin/mise activate fish | source
+else
+  echo ">>>> mise executable not found in ~/bin, so mise not activated."
+end
+
 # Pull in a local config file, if it exists, to overwrite config above
 if test -f ~/.config/fish/config.local.fish
   . ~/.config/fish/config.local.fish
