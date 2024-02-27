@@ -58,8 +58,10 @@ abbr gitcd "git checkout development && $_gitss"
 abbr gitcms "git checkout master && $_gitss"
 set --erase _gitss
 
-abbr gitdf "git diff --diff-algorithm=minimal"
-abbr gitdc "git diff --cached --diff-algorithm=minimal"
+# algorithm=histogram seems less good but is recommended?
+# thanks https://jvns.ca/blog/2024/02/16/popular-git-config-options/ and https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
+abbr gitdf "git diff --diff-algorithm=patience"
+abbr gitdc "git diff --cached --diff-algorithm=patience"
 abbr githeads "git diff HEAD~1 HEAD"
 abbr gitap "git add -p"
 abbr gitme "git log --no-color | rg -A4 -B1 ouhou | more"

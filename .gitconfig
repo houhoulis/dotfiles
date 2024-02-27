@@ -2,12 +2,14 @@
   defaultBranch = main
 [log]
   decorate = auto
+  date = iso
 [user]
   name = Chris Houhoulis
 [remote "upstream"]
   tagOpt = --tags
 [branch]
   autosetuprebase = always
+  sort = -committerdate
 [color]
   ui = always
   # showbranch = never
@@ -90,3 +92,13 @@
 
 [merge]
   conflictstyle = diff3
+
+# thanks https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+[help]
+  autocorrect = prompt
+[transfer]
+  fsckobjects = true
+[fetch]
+  fsckobjects = true
+[receive]
+  fsckObjects = true
