@@ -8,7 +8,7 @@
 [remote "upstream"]
   tagOpt = --tags
 [branch]
-  autosetuprebase = always
+  autosetuprebase = never
   sort = -committerdate
 [color]
   ui = always
