@@ -10,15 +10,19 @@ bind --erase --all \cd
 # (Putting this bind statement in a fish_user_key_bindings function, as the docs seem to suggest, has no effect.)
 
 # Configure Homebrew, including disabling automatic behavior. https://docs.brew.sh/Manpage#environment
-set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK wtfofcoursenot
-set -x HOMEBREW_NO_INSTALL_CLEANUP wtfofcoursenot
+set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1 # wtfofcoursenot
+set -x HOMEBREW_NO_INSTALL_CLEANUP 1 # wtfofcoursenot
 set -x HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS 36524.25 # 100 years in days, on average 🙃
 set -x HOMEBREW_NO_AUTO_UPDATE 1
 # set -x HOMEBREW_AUTO_UPDATE_SECS 123456789012345678901234567890
 # Check Homebrew's API for new formulae or cask data every `HOMEBREW_API_AUTO_UPDATE_SECS` seconds. Alternatively, disable API auto-update checks entirely with HOMEBREW_NO_AUTO_UPDATE
 # set -x HOMEBREW_API_AUTO_UPDATE_SECS 123456789012345678901234567890
 # set -x HOMEBREW_NO_ANALYTICS 1
-set -x HOMEBREW_NO_GOOGLE_ANALYTICS 1
+# They state they removed google analytics
+# set -x HOMEBREW_NO_GOOGLE_ANALYTICS 1
+set -x HOMEBREW_NO_BUILD_ERROR_ISSUES 1 # https://github.com/Homebrew/brew/pull/18313/changes
+set -x HOMEBREW_NO_BOOTSNAP 1
+set -x HOMEBREW_ASK 1
 
 set -x HITHERE "hi there"
 set -x EDITOR vim
