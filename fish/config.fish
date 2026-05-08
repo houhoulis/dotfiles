@@ -34,16 +34,18 @@ set -x FISH_CONFIG_PATH "$HOME/.config/fish"
 set -x ELIXIR_EDITOR "codium --goto __FILE__:__LINE__"
 # To keep input history across iex sessions:
 set -x ERL_AFLAGS "-kernel shell_history enabled"
+# set -x UV_MANAGED_PYTHON "true" # require uv (and uvx?) to use only uv-managed python(s)
+set -x UV_PYTHON_DOWNLOADS "manual"
 
 set _gitcontrib /usr/local/share/git-core/contrib
-set --path -x PATH "$HOME/bin:$HOME/.cargo/bin:$HOME/.mix/escripts:$HOME/.rvm/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$HOME/Library/Python/3.11/bin:$HOME/Library/Python/3.10/bin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
+set --path -x PATH "$HOME/bin:$HOME/.cargo/bin:$HOME/.mix/escripts:$HOME/.rvm/bin:$HOME/.local/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$HOME/Library/Python/3.11/bin:$HOME/Library/Python/3.10/bin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
 # I don't know why this was added:
 # set --path -x PATH "/Users/chrish/.cpan/build/App-cpanminus-1.7046-0/blib/script"
 set --erase _gitcontrib
 
 # See https://rvm.io/integration/fish
 #CJH rvm default
-rvm > /dev/null
+#rvm > /dev/null
 
 abbr -a -g rvminfo "rvm info | tail"
 
