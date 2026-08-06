@@ -39,6 +39,11 @@ set -x ERL_AFLAGS "-kernel shell_history enabled"
 # set -x UV_MANAGED_PYTHON "true" # require uv (and uvx?) to use only uv-managed python(s)
 set -x UV_PYTHON_DOWNLOADS "manual"
 
+# selenium.dev "Selenium Manager" reports usage stats? I don't even want to use selenium manager
+set -x SE_AVOID_STATS true
+# It also surprises by _automatically_ downloading and installing a browser! by default, Chrome!
+set -x SE_AVOID_BROWSER_DOWNLOAD true
+
 set _gitcontrib /usr/local/share/git-core/contrib
 set --path -x PATH "$HOME/bin:$HOME/.cargo/bin:$HOME/.mix/escripts:$HOME/.rvm/bin:$HOME/.local/bin:$_gitcontrib:$_gitcontrib/contacts:$_gitcontrib/diff-highlight:$_gitcontrib/git-jump:$_gitcontrib/stats:$_gitcontrib/subtree:$_gitcontrib/workdir:$HOME/Library/Python/3.11/bin:$HOME/Library/Python/3.10/bin:/Library/Apple/usr/bin:/System/Library/Tcl/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
 # I don't know why this was added:
