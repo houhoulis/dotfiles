@@ -24,8 +24,7 @@ set -x HOMEBREW_NO_BUILD_ERROR_ISSUES 1 # https://github.com/Homebrew/brew/pull/
 set -x HOMEBREW_NO_BOOTSNAP 1
 set -x HOMEBREW_ASK 1
 set -x HOMEBREW_UPGRADE_GREEDY 1
-# Want to set this to false in Homebrew 5.2
-# HOMEBREW_UPGRADE_AUTO_UPDATES_CASKS
+set -x HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS 1
 
 set -x HITHERE "hi there"
 set -x EDITOR vim
