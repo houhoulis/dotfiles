@@ -139,7 +139,7 @@ abbr top btop
 
 abbr which where
 
-abbr rg "rg --hidden --unrestricted --no-ignore --no-require-git --max-columns=500 --max-columns-preview -g '!.git/**' -g '!node_modules/**'"
+abbr rg "rg --hidden --unrestricted --no-ignore --no-require-git --max-columns=500 --max-columns-preview -g '!.git/**' -g '!node_modules/**' -g '!**/node_modules/**'"
 
 if test -f ~/bin/mise
   ~/bin/mise activate fish | source
