@@ -9,6 +9,10 @@
 bind --erase --all \cd
 # (Putting this bind statement in a fish_user_key_bindings function, as the docs seem to suggest, has no effect.)
 
+# set -x -g fish_color_command 123456 ## default seems to be 005fd7
+set -x -g fish_color_builtin cc00ff
+set -x -g fish_color_function 33ffaa
+
 # Configure Homebrew, including disabling automatic behavior. https://docs.brew.sh/Manpage#environment
 set -x HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1 # wtfofcoursenot
 set -x HOMEBREW_NO_INSTALL_CLEANUP 1 # wtfofcoursenot
